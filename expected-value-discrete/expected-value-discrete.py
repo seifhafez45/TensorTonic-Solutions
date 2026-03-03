@@ -6,7 +6,7 @@ def expected_value_discrete(x, p):
     """
     # Write code here
     ans = 0
-    if sum(p)!=1:
+    if not np.allclose(np.sum(p), 1, atol=1e-6):
         raise ValueError 
     for i in range(len(x)):
         ans+= x[i]*p[i]
